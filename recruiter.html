@@ -60,7 +60,7 @@
             
             function startTimer() {
                 sendTgs();
-                frequency = parseInt(document.getElementById("interval").value) * 1000;
+                frequency = 1000 * (parseInt(document.getElementById("interval").value) + 1);
                 if (myInterval > 0) clearInerval(myInterval);
                 myInterval = setInterval("sendTgs()", frequency);
             }
