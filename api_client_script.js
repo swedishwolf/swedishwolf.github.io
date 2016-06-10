@@ -5,6 +5,10 @@ var newNation;
 var mode;
 var targets;
 var tgLimit;
+var request = new XMLHttpRequest();
+
+request.open("GET", "http://www.nationstates.net/cgi-bin/api.cgi", true);
+request.setRequestHeader("User-Agent", "http://thesolborg.github.io");
 
 function newRecruits() {
     mode = "new";
