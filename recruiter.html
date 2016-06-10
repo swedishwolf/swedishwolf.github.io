@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recruiter</title>
+        <style>
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                color: #222;
+                font-size: 18px;
+            }
+            
+            input {
+                display: block;
+                width: 300px;
+                height: 20px;
+                margin: 5px 0 5px 0;
+            }
+            
+            span {
+                display: block;
+                margin: 5px 0 5px 0;
+            }
+            
+            #submit_button {
+                display: none;
+            }
+            
+            button {
+                width: 150px;
+                height: 50px;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            
+            iframe {
+                display: none;
+            }
+        </style>
+        <script>
+            var frequency;
+            var myInterval = 0;
+            var numberSent = 0;
+            var newNation;
+            
+            function httpGet(theUrl) {
+                var xmlHttp = null;
+                xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", theUrl, false );
+                xmlHttp.send( null );
+                return xmlHttp.responseText;
+            }
+            
+            function getNewestNation() {
+                var newData = httpGet("http://www.nationstates.net/cgi-bin/api.cgi?q=newnations");
+                var begin = newData.indexOf("<NEWNATIONS>") + 12;
+                var end = newData.indexOf(",");
+                newNation = newData.substring(begin, end);
+            }
+            
+            function startTimer() {
+                sendTgs();
+                frequency = parseInt(document.getElementById("interval").value) * 1000;
+                if (myInterval > 0) clearInerval(myInterval);
+                myInterval = setInterval("sendTgs()", frequency);
+            }
+            
+            function sendTgs() {
+                getNewestNation();
+                document.getElementById("to_box").value = newNation;
+                numberSent += 1;
+                document.getElementById("submit_button").click();
+                document.getElementById("technical_a").innerHTML = "Sending telegrams... " + numberSent + " sent so far";
+                document.getElementById("technical_b").innerHTML = "Last telegram sent to: " + newNation;
+            }
+        </script>
+    </head>
+    <body>
+        <h1><i>Easy</i> Telegram API Recruiter Client</h1>
+        Made by <a href="http://nationstates.net/nation=solborg" target="_blank">Solborg</a>
+        <h2>Parameters:</h2>
+        <form action="http://www.nationstates.net/cgi-bin/api.cgi" method="get" target="the_frame">
+            <input type="hidden" name="a" value="sendTG">
+            <input type="hidden" name="to" id="to_box">
+            Client Key<input type="text" name="client">
+            Secret Key<input type="text" name="key">
+            Template ID<input type="text" name="tgid">
+            Frequency (seconds)<br><input type="text" id="interval" value="180">
+            <input type="submit" id="submit_button">
+        </form>
+        <button onclick="startTimer()">Begin Sending</button>
+        <iframe name="the_frame"></iframe><br>
+        <span id="technical_a"></span>
+        <span id="technical_b"></span>
+    </body>
+</html>
