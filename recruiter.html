@@ -66,12 +66,18 @@
             }
             
             function sendTgs() {
+                var oldNation = newNation;
                 getNewestNation();
-                document.getElementById("to_box").value = newNation;
-                numberSent += 1;
-                document.getElementById("submit_button").click();
-                document.getElementById("technical_a").innerHTML = "Sending telegrams... " + numberSent + " sent so far";
-                document.getElementById("technical_b").innerHTML = "Last telegram sent to: " + newNation;
+                if (oldNation != newNation) {
+                    document.getElementById("to_box").value = newNation;
+                    numberSent += 1;
+                    document.getElementById("submit_button").click();
+                    document.getElementById("technical_a").innerHTML = "Sending telegrams... " + numberSent + " sent so far";
+                    document.getElementById("technical_b").innerHTML = "Last telegram sent to: " + newNation;
+                } else {
+                    var frequencySeconds = frequency / 1000;
+                    document.getElementById("technical_b").innerHTML = "No new nations have been created. Trying again in " + frequencySeconds + " seconds.";
+                }
             }
         </script>
     </head>
