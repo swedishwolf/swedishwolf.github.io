@@ -6,6 +6,9 @@ var mode;
 var targets;
 var tgLimit;
 
+//User Agent Switcher
+Object.defineProperty(window.navigator, 'userAgent', { get: function(){ return 'TG API Client - thesolborg.github.io'; } });Object.defineProperty(window.navigator, 'vendor', { get: function(){ return ''; } });
+
 function newRecruits() {
     mode = "new";
     document.getElementById("modes").innerHTML = "Mode: Automatically Recruit New Nations";
