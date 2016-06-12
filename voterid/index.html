@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Official Norrland Ballot</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="shortcut icon" href="favicon.png" type="image">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1><img src="flag_icon.png"> Norrland Chancellor Ballot</h1>
+        <div id="step_one">
+            <h2>Part One: Verification</h2>
+            <input type="hidden" name="a" value="verify">
+            <p>Your Nation's Name: <input type="text" id="nation"></p>
+            <span class="desc">Enter only the short name of your nation. This is what you sign in to NationStates with.</span>
+            <p>Verification Code: <input type="text" id="checksum" autocomplete="off"></p>
+            <span class="desc">Click <a href="http://www.nationstates.net/page=verify_login" target="_blank">here</a> to get your code. This can only be used one time.</span>
+            <button onclick="verify()">Continue</button>
+        </div>
+        <div id="step_two">
+            <h2>Part Two: Voting</h2>
+            <iframe src="https://docs.google.com/forms/d/1P2YZhCY4XCC_ukpc1laPSCPRzYUa3iHGJqbpsMLk9rc/viewform?embedded=true">Loading...</iframe>
+        </div>
+    </body>
+</html>
