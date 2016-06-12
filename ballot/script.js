@@ -14,7 +14,7 @@ function httpGet(theUrl) {
 
 function checkNation() {
     nationTyped = document.getElementById("nation").value;
-    if (nations.indexOf(nationTyped) < 0) {
+    if (nations.indexOf(nationTyped.toLowerCase()) < 0) {
         document.getElementById("nation").style.border = "2px solid red";
         alert("Nation not recognized. Telegram Stockgrove if you think this is a mistake.");
         valid = false;
