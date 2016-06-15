@@ -19,5 +19,3 @@ Things to know:
 1) This client only works for targeting new nations with recruitment telegrams.
 
 2) If you make a change to the motto, national animal, or currency while the program is running, your control nation will receive an automated telegram.
-
-3) To see a more detailed outline of what the program is doing, open your browser console while it is running.

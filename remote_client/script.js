@@ -39,6 +39,10 @@ function getCommands() {
     currencyData = numbers[2].split(" ");
 }
 
+function printOutput(info) {
+    document.getElementById("output").innerHTML += Date().substring(0,24) + "&gt; " + info + "<br>";
+}
+
 function getNewestNation() {
     var newData = httpGet("http://www.nationstates.net/cgi-bin/api.cgi?q=newnations");
     var begin = newData.indexOf("<NEWNATIONS>") + 12;
@@ -47,10 +51,9 @@ function getNewestNation() {
 }
 
 function begin() {
-    console.log("Starting...");
+    printOutput("Program has started.");
     cycle();
     document.getElementById("begin_button").style.display = "none";
-    document.getElementById("testing").innerHTML = "Currently running... Check the browser console for more info.";
     if (myInterval > 0) clearInerval(myInterval);
     myInterval = setInterval("cycle()", 185000);
 }
@@ -60,20 +63,20 @@ function cycle() {
     var i;
     if (updated === true) {
         i = httpGet("http://www.nationstates.net/cgi-bin/api.cgi?a=sendTG&client=" + numbers[0] + "&tgid=16115961&key=e14658608ced&to=" + controlName);
-        console.log("Change detected - called for confirmation telegram");
-        console.log("Client Key: " + numbers[0] + "; Secret Key: " + numbers[1] + "; TGID: " + currencyData[0] + "; Mode: " + currencyData[1]);
+        printOutput("Change detected - called for confirmation telegram");
+        printOutput("Client Key: " + numbers[0] + "; Secret Key: " + numbers[1] + "; TGID: " + currencyData[0] + "; Mode: " + currencyData[1]);
     } else if (currencyData[1] == "on") {
-        console.log("Client is currently enabled.");
+        printOutput("Client is currently enabled.");
         var oldNation = newNation;
         getNewestNation();
         if (oldNation != newNation) {
             i = httpGet("http://www.nationstates.net/cgi-bin/api.cgi?a=sendTG&client=" + numbers[0] + "&tgid=" + currencyData[0] + "&key=" + numbers[1] + "&to=" + newNation);
-            console.log("API called to send telegram to " + newNation);
+            printOutput("API called to send telegram to " + newNation);
         }
     } else if (currencyData[1] == "stop") {
-        console.log("Client has been terminated.");
+        printOutput("Client has been terminated.");
         location.reload();
     } else {
-        console.log("Client has been paused.");
+        printOutput("Client has been paused.");
     }
 }
