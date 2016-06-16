@@ -62,6 +62,9 @@ function calculate() {
 }
 
 function displayResults() {
+    document.getElementById("update_button").style.display = "none";
+    document.getElementById("reset_button").style.display = "inline";
+    
     document.getElementById("b2").innerHTML = votes.pi;
     document.getElementById("c2").innerHTML = votes.g;
     document.getElementById("d2").innerHTML = votes.soc;

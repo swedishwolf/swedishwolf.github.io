@@ -11,6 +11,7 @@
             <div class="content">
                 <h1>Parameters</h1>
                 <p>Make adjustments to the numbers to alter the results.</p>
+                <p>It will not work if the total number of Rep. Seats is not 79.</p>
                 <table>
                     <tr>
                         <th>Party</th>
@@ -48,7 +49,8 @@
                         <td><input type="text" id="sol_seats"></td>
                     </tr>
                 </table>
-                <button onclick="calculate()">Update</button>
+                <button onclick="calculate()" id="update_button">Update</button>
+                <button onclick="location.reload()" id="reset_button">Reset</button>
             </div>
         </div>
         <div id="right">
