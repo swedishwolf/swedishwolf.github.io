@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Storr&aring;det Seat Calculator</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="shortcut icon" href="favicon.png" type="image">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="left">
+            <div class="content">
+                <h1>Parameters</h1>
+                <p>Make adjustments to the numbers to alter the results.</p>
+                <table>
+                    <tr>
+                        <th>Party</th>
+                        <th>Votes</th>
+                        <th>Rep. Seats</th>
+                    </tr>
+                    <tr>
+                        <td>Pirate</td>
+                        <td><input type="text" id="pi_votes"></td>
+                        <td><input type="text" id="pi_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Green</td>
+                        <td><input type="text" id="g_votes"></td>
+                        <td><input type="text" id="g_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Socialist</td>
+                        <td><input type="text" id="soc_votes"></td>
+                        <td><input type="text" id="soc_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Progress</td>
+                        <td><input type="text" id="pr_votes"></td>
+                        <td><input type="text" id="pr_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Liberal</td>
+                        <td><input type="text" id="l_votes"></td>
+                        <td><input type="text" id="l_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Solidarity</td>
+                        <td><input type="text" id="sol_votes"></td>
+                        <td><input type="text" id="sol_seats"></td>
+                    </tr>
+                </table>
+                <button onclick="calculate()">Update</button>
+            </div>
+        </div>
+        <div id="right">
+            <div class="content">
+                <h1>Results</h1>
+                <p>What the Storr&aring;d would look like with your numbers:</p>
+                <table>
+                    <tr>
+                        <th>Party</th>
+                        <th>Pirate</th>
+                        <th>Green</th>
+                        <th>Socialist</th>
+                        <th>Progress</th>
+                        <th>Liberal</th>
+                        <th>Solidarity</th>
+                    </tr>
+                    <tr>
+                        <th>Votes</th>
+                        <td id="b2"></td>
+                        <td id="c2"></td>
+                        <td id="d2"></td>
+                        <td id="e2"></td>
+                        <td id="f2"></td>
+                        <td id="g2"></td>
+                    </tr>
+                    <tr>
+                        <th>Rep. Seats</th>
+                        <td id="b3"></td>
+                        <td id="c3"></td>
+                        <td id="d3"></td>
+                        <td id="e3"></td>
+                        <td id="f3"></td>
+                        <td id="g3"></td>
+                    </tr>
+                    <tr>
+                        <th>List Seats</th>
+                        <td id="b4"></td>
+                        <td id="c4"></td>
+                        <td id="d4"></td>
+                        <td id="e4"></td>
+                        <td id="f4"></td>
+                        <td id="g4"></td>
+                    </tr>
+                    <tr>
+                        <th>Total Seats</th>
+                        <td id="b5"></td>
+                        <td id="c5"></td>
+                        <td id="d5"></td>
+                        <td id="e5"></td>
+                        <td id="f5"></td>
+                        <td id="g5"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
