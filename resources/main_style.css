@@ -64,3 +64,8 @@ h2 {
 #blog_content {
     border-bottom: 3px solid #666;
 }
+
+#tlkio {
+    width: 100%;
+    height: 400px;
+}
