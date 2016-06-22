@@ -12,10 +12,32 @@
                 <h2>This is the official website of the Fantastic Republic of Solborg. Here, you can find lots of interesting stuff.</h2>
                 <p>Were you trying to access the API Client page? If so, click <a href="api_client.html" target="_blank">here</a> (opens in a new tab).</p>
             </div>
-            <div id="content">
+            <div id="blog_content">
                 <p id="post_intro"></p>
                 <div id="post_content"></div>
                 <script src="resources/main_script.js"></script>
+            </div>
+            <div id="comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                     */
+                    var disqus_config = function () {
+                        this.page.url = "http://thesolborg.github.io";  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = "Website of Solborg"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    
+                    (function() {  // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        
+                        s.src = 'http://norrland.disqus.com/embed.js';
+                        
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
             </div>
             <div id="footer">
                 <p>This website was created by Cooper Johnston, Prime Minister of Solborg.</p>
