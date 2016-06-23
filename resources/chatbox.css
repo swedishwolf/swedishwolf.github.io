@@ -1,0 +1,16 @@
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #fff;
+}
+
+#header {
+    display: none;
+}
+
+.chat {
+    margin: 0;
+}
+
+.footer-wrapper {
+    margin: 0;
+}
