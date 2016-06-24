@@ -21,7 +21,7 @@ var postIntro = document.getElementById("post_intro");
 var postContent = document.getElementById("post_content");
 
 if (postID === null) {
-    postID = "0001";
+    postID = "0002";
     postIntro.innerHTML = 'The most recent post is shown below. Click <a href="#" onclick="showList()">here</a> to browse through all posts.';
 } else {
     postIntro.innerHTML = "Post number " + postID + ' is shown below. Click <a href="#" onclick="showList()">here</a> to browse through all posts.';
