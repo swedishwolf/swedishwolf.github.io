@@ -77,13 +77,13 @@ function sendTgs() {
         }
     } else {
         if (numberSent < targets.length) {
-            document.getElementById("submit_button").click();
             var displayNum = numberSent + 1;
             document.getElementById("to_box").value = targets[numberSent];
             document.getElementById("technical_a").innerHTML = "Sending telegrams... " + displayNum + " sent so far";
             document.getElementById("technical_b").innerHTML = "Last telegram sent to: " + targets[numberSent];
             console.log("API called to send telegram to " + targets[numberSent]);
             numberSent += 1;
+            document.getElementById("submit_button").click();
         } else {
             document.getElementById("technical_b").innerHTML = "Finished sending telegrams.";
             myInterval = 1;
