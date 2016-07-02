@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Raspberry Pi Program</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <script src="sha1.js"></script>
+        <script src="tea-block.js"></script>
+    </head>
+    <body>
+        <h1><img src="icon.png">Raspberry Pi Program</h1>
+        <h2>Made by Solborg for the NationStates API</h2>
+        <div id="auth">
+            <p>This is a private program.</p>
+            <p>Enter the passcode below to access it:</p>
+            <input type="text" id="passcode_box">
+            <button onclick="auth()">Authenticate</button>
+        </div>
+        <div id="content">
+            <h1>Remote Telegram API Client</h1>
+            <h2>Parameters</h2>
+            <p>Control Nation:</p>
+            <input type="text" id="controller">
+            <p>Encryption Key:</p>
+            <input type="text" id="key">
+            <button onclick="begin()" id="begin_button">Begin</button>
+            <p>Output:</p>
+            <div id="output"></div>
+        </div>
+        <script id="api_scripts"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
